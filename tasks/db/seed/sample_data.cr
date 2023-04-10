@@ -25,6 +25,17 @@ class Db::Seed::SampleData < LuckyTask::Task
     #   SignUpUser.create!(email: "me@example.com", password: "test123", password_confirmation: "test123")
     # end
     # ```
+
+    # SaveAlpha.create!({"name" => "Alpha 1", "beta" => {"content" => "Beta 1"}})
+    # SaveAlpha.create!(name: "Alpha 1", beta: {content: "Beta 1"})
+
+    # would love to have
+    SaveCharlie.create!(name: "Charlie 1", delta: {content: "Delta 1"})
+
+    # I think this is the closest api you can get
+    charlie = SaveCharlie.new(content: "Charlie 1")
+    SaveDelta.create!(content: "Delta 1", charlie: charlie)
+
     puts "Done adding sample data"
   end
 end
